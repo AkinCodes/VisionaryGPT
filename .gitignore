@@ -1,0 +1,39 @@
+# Python related
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+.env
+
+# Virtual Environment
+venv/
+env/
+.venv/
+ENV/
+
+# Ignore env file or folder
+.env
+.env.*
+env/
+
+
+# IDEs
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+
+# Logs
+*.log
+
+# Render-specific files
+render.yaml
+
+# If you have a model file (e.g., for CLIP or Stable Diffusion), you might want to ignore large files
+*.pt
+*.h5
+
+# Ignore uploaded files (e.g., for temp uploads or generated files)
+uploads/
+static/generated/
