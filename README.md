@@ -1,141 +1,125 @@
-VisionaryGPT: AI-Powered Movie Poster Generation & Classification
-Welcome to VisionaryGPT, an AI-powered platform designed to generate, classify, and extract metadata from movie posters using cutting-edge technologies in computer vision, deep learning, and natural language processing (NLP). This project demonstrates the integration of AI models and FastAPI, enabling advanced movie poster generation and categorization.
+# VisionaryGPT: AI-Powered Movie Poster Generation & Classification
 
-🚀 Key Features
-Movie Poster Generation:
-Generate stunning movie posters from textual prompts using Stable Diffusion model and CLIP for image generation. Example prompts like "Sci-Fi thriller with a futuristic city" can be transformed into highly detailed and dynamic posters.
+Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, classify, and extract metadata from movie posters. By leveraging the most cutting-edge technologies in computer vision, deep learning, and natural language processing (NLP), VisionaryGPT transforms creative possibilities for media and entertainment into reality. This project demonstrates the seamless integration of powerful AI models with FastAPI for high-performance API deployment.
 
-Poster Classification:
-Classify movie posters into genres such as Action, Comedy, Drama, Horror, Romance, etc., using deep learning-based classification models integrated with FastAPI.
 
-Metadata Generation:
-Using CLIP for visual feature extraction and GPT-4 for automated movie metadata generation. Automatically generate movie details including:
+## Key Features
+### **1. Poster Generation**
+- **Stable Diffusion**: Utilize **Stable Diffusion**, a powerful **text-to-image generation model**, to create high-quality movie posters based on user-provided prompts.
+- Example prompt: "Sci-Fi thriller with a futuristic city."
 
-Title
+### **2. Movie Poster Classification**
+- **Deep Learning Classification**: Classify movie posters into genres such as **Action**, **Comedy**, **Drama**, **Horror**, **Romance**, and more using a custom-trained **ResNet model** integrated into the FastAPI backend.
 
-Genre
+### **3. Metadata Generation**
+- **CLIP + GPT-4**: Automatically generate detailed movie metadata, including:
+    - **Title**
+    - **Genre**
+    - **Tagline**
+    - **Mood**
+    - **2-Sentence Summary**
+  
+  This is based on the visual features of a poster using **CLIP** for image-text matching and **GPT-4** for generating creative and meaningful metadata.
 
-Tagline
+### **4. OCR (Optical Character Recognition)**
+- **Text Extraction**: Extract text from movie posters, such as **movie titles**, **quotes**, and **descriptions**, enabling dynamic interaction with textual data embedded in images.
 
-Mood
+### **5. Face Detection & Recognition**
+- **Detect & Recognize Faces**: Detect faces in movie posters using deep learning models. Additionally, the system can optionally recognize and verify identities based on **facial features** to enhance search and categorization.
 
-2-Sentence Summary
+### **6. Active Learning**
+- **Feedback Loop**: Users can provide **feedback** to improve the accuracy of classification models and object detection, enabling the system to adapt and become smarter over time.
 
-OCR (Optical Character Recognition):
-Extract text from movie posters, enabling interaction with text elements such as movie titles, quotes, and descriptions.
 
-Face Detection & Recognition:
-Detect and recognize faces on movie posters for advanced search capabilities, enabling recognition based on facial features.
 
-Active Learning:
-Supports feedback loops that allow users to improve model performance by submitting corrections, enhancing classification models and detection capabilities.
+## Technologies Used
+- **FastAPI**: Backend framework for creating the web API.
+- **PyTorch & torchvision**: For training deep learning models and performing image classification.
+- **CLIP (Contrastive Language-Image Pretraining)**: For extracting semantic features from images and generating text prompts.
+- **GPT-4**: For generating creative metadata descriptions, titles, and summaries based on images.
+- **Stable Diffusion**: A text-to-image generation model used to create movie posters based on text prompts.
 
-Remix Posters:
-Remix multiple posters using a combination of A + B - C, creatively generating new, customized movie posters.
+## How to Run Locally
 
-🛠️ Tech Stack
-Backend: FastAPI (for API creation and deployment)
+1. **Clone the repository**:
 
-Machine Learning & AI:
+   ```bash
+   git clone https://github.com/yourusername/visionarygpt.git
+   cd visionarygpt
+   ```
 
-CLIP for image-text matching and metadata generation
+2. **Set up a Python environment** (using `venv` or `conda`):
 
-Stable Diffusion for text-to-image generation
+   ```bash
+   python3 -m venv vision-env
+   source vision-env/bin/activate  # On Mac/Linux
+   vision-env\Scriptsctivate     # On Windows
+   ```
 
-GPT-4 for metadata and textual description generation
+3. **Install dependencies**:
 
-YOLOv8 for object and face detection
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Database: SQLAlchemy and SQLModel (for data management, user information, and generated posters)
+4. **Set up environment variables** (if required):
 
-Deployment: Render (or similar platforms) using Docker, with CI/CD pipelines for streamlined updates.
+   Ensure that you have an OpenAI API key by setting up a `.env` file in the root of your project with the following content:
 
-💡 Project Purpose
-VisionaryGPT is designed to leverage cutting-edge AI technology to streamline the generation, classification, and understanding of movie posters. By combining vision models (CLIP, YOLO) with language models (GPT-4), the platform offers:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   ```
 
-Enhanced creativity for users looking to generate visually stunning movie posters.
+5. **Run the FastAPI server**:
 
-Automated classification of large-scale movie poster datasets.
+   ```bash
+   uvicorn backend.app.main:app --reload
+   ```
 
-Smart metadata generation to enrich movie posters with context and improve automated tagging.
+6. **Testing the endpoints**:
 
-🖼️ How It Works
-FastAPI Endpoints:
-POST /embed/: Embed an image for feature extraction using CLIP.
+   Navigate to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to interact with the Swagger UI and test the available endpoints.
 
-POST /remix/: Remix movie posters using multiple images (A + B - C).
+   - **POST /classify/**: Classifies a given movie poster image into genres.
+   - **POST /metadata/**: Generates metadata for a given movie poster image.
+   - **POST /embed/**: Embeds movie poster images into a semantic space for further processing or searching.
+   - **POST /faces/**: Detects and recognizes faces from the movie poster image.
 
-POST /classify/: Classify the genre of a movie poster.
+## Testing the Endpoints
+To test the endpoints, you can use the Swagger UI dashboard at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs). Here’s how to test them:
 
-POST /ocr/: Extract text from an image (OCR).
+1. **POST /classify/**:
+   - Input: Provide a movie poster image.
+   - Output: Genre classification with confidence score.
 
-POST /metadata/: Generate metadata like title, genre, tagline, and summary from a poster.
+2. **POST /metadata/**:
+   - Input: Provide a movie poster image.
+   - Output: Automatically generated metadata including title, genre, tagline, mood, and summary.
 
-POST /generation/: Generate a movie poster using a textual description.
+3. **POST /embed/**:
+   - Input: Provide a movie poster image.
+   - Output: Embedding of the poster in a semantic vector space for further AI tasks.
 
-POST /feedback/: Store user feedback on predictions.
+4. **POST /faces/**:
+   - Input: Provide a movie poster image.
+   - Output: Detected faces and their bounding boxes with confidence scores.
 
-POST /faces/: Detect and recognize faces in movie posters.
+5. **POST /detect/**:
+   - Input: Provide a movie poster image.
+   - Output: Detects objects in the poster and returns bounding boxes around identified objects with confidence scores.
+  
+5. **POST /generate/**:
+   - Input: Provide a textual prompt to generate a movie poster, along with any necessary parameters such as an uploaded image 
+     file for additional context.
+   - Output: A generated movie poster based on the provided prompt and image. The output will include a URL pointing to the 
+   generated poster.
 
-POST /detect/: Detect objects in posters.
+## Contributions
+Feel free to fork this project and submit pull requests for improvements! Contributions are welcome in the following areas:
+- Improving the performance of classification models.
+- Enhancing metadata generation with more complex descriptions.
+- Adding new features, such as automatic movie title generation.
 
-POST /auth/: Register and log in users for personalized experiences.
-
-POST /active_learning/corrections: Save corrections from users to improve model performance.
-
-POST /simple-test/: Simple testing endpoint for model validation.
-
-🎯 Purpose for Silicon Valley Recruiters
-This project is designed to showcase expertise in full-stack AI, computer vision, and NLP with a focus on scalable, production-ready solutions. It demonstrates:
-
-Innovative AI Integration: Integrating GPT-4, CLIP, YOLO, and Stable Diffusion to build an advanced system that bridges text and image generation.
-
-Scalability & Performance: Built with FastAPI for high-performance APIs and deployed on Render with Docker for easy scalability.
-
-User-Centric AI: Enhancing user experience with active learning, face recognition, and OCR for better interaction and continuous model improvement.
-
-🚀 How To Run The Project Locally
-Prerequisites:
-Python 3.8+
-
-Pip or Conda for managing dependencies
-
-Installation:
-Clone the repository:
-
-bash
-Copy
-git clone https://github.com/yourusername/VisionaryGPT.git
-cd VisionaryGPT
-Create and activate a virtual environment:
-
-bash
-Copy
-python -m venv vision-env
-source vision-env/bin/activate  # For Mac/Linux
-vision-env\Scripts\activate     # For Windows
-Install dependencies:
-
-bash
-Copy
-pip install -r requirements.txt
-Run the FastAPI server:
-
-bash
-Copy
-uvicorn backend.app.main:app --reload
-The application will be live at http://127.0.0.1:8000.
-
-🌟 Future Improvements
-Enhanced Face Recognition: Improve the ability to recognize and verify individual identities based on facial features.
-
-Fine-Tuned Models: Fine-tune models for more accurate classification and metadata generation.
-
-User Personalization: Implement advanced user personalization features, allowing saved preferences and AI-assisted poster curation.
-
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Testing the Endpoints:
-You can test all the FastAPI endpoints directly via the Swagger UI on your local machine. Here, you can explore and interact with the API using a visual interface for easy testing. Each POST endpoint can be tested with relevant parameters such as image file paths, prompts, and other required data. This functionality ensures you can verify the system’s capability to generate posters, classify them, extract metadata, and much more, all from a simple, user-friendly dashboard!
+## Contact
+If you have any questions or suggestions, feel free to contact me at: **your-email@example.com**
 
