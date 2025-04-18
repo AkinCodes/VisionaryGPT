@@ -62,7 +62,8 @@ Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, class
    ```bash
    python3 -m venv vision-env
    source vision-env/bin/activate  # On Mac/Linux
-   vision-env\Scriptsctivate     # On Windows
+   vision-env\Scripts\activate     # On Windows
+
    ```
 
 3. **Install dependencies**:
@@ -86,13 +87,6 @@ Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, class
    ```
 
 6. **Testing the endpoints**:
-
-   Navigate to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) to interact with the Swagger UI and test the available endpoints.
-
-   - **POST /classify/**: Classifies a given movie poster image into genres.
-   - **POST /metadata/**: Generates metadata for a given movie poster image.
-   - **POST /embed/**: Embeds movie poster images into a semantic space for further processing or searching.
-   - **POST /faces/**: Detects and recognizes faces from the movie poster image.
 
 ## Testing the Endpoints
 To test the endpoints, you can use the Swagger UI dashboard at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs). Here’s how to test them:
@@ -123,12 +117,22 @@ To test the endpoints, you can use the Swagger UI dashboard at [http://127.0.0.1
    - Output: A generated movie poster based on the provided prompt and image. The output will include a URL pointing to the 
    generated poster.
 
+**Executing the Requests:**
+After entering the necessary information (such as the image file path or uploading the file), click Execute. The response from the API will be displayed on the right side of the screen, showing you the classification, metadata, or results based on your image.
+
+
 ## Contributions
 Feel free to fork this project and submit pull requests for improvements! Contributions are welcome in the following areas:
 - Improving the performance of classification models.
 - Enhancing metadata generation with more complex descriptions.
 - Adding new features, such as automatic movie title generation.
 
-## Contact
-If you have any questions or suggestions, feel free to contact me at: **your-email@example.com**
+---
+
+## Author
+**Akin Olusanya**  
+iOS Engineer | ML Enthusiast | Full-Stack Creator  
+workwithakin@gmail.com  
+[LinkedIn](https://www.linkedin.com/in/akindeveloper)  
+[GitHub](https://github.com/AkinCodes)
 
