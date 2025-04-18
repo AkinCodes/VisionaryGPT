@@ -1,0 +1,11 @@
+name: vision-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9  # Change this if needed to match your preferred Python version
+  - numpy=1.24.3  # Specify the version of NumPy you want to use
+  - pytorch=2.4.1  # Replace with your desired PyTorch version
+  - pip
+  - pip:
+      - -r requirements.txt  # Install additional packages from your requirements.txt if needed
