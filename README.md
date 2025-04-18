@@ -31,13 +31,22 @@ Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, class
 - **Feedback Loop**: Users can provide **feedback** to improve the accuracy of classification models and object detection, enabling the system to adapt and become smarter over time.
 
 
-
 ## Technologies Used
 - **FastAPI**: Backend framework for creating the web API.
 - **PyTorch & torchvision**: For training deep learning models and performing image classification.
 - **CLIP (Contrastive Language-Image Pretraining)**: For extracting semantic features from images and generating text prompts.
 - **GPT-4**: For generating creative metadata descriptions, titles, and summaries based on images.
 - **Stable Diffusion**: A text-to-image generation model used to create movie posters based on text prompts.
+
+
+## Screenshots
+
+<img width="818" alt="Screenshot 2025-04-18 at 16 50 10" src="https://github.com/user-attachments/assets/4bf10aa9-8871-4f1f-a87c-3ca4eb3cf38c" />
+
+
+
+
+
 
 ## How to Run Locally
 
