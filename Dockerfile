@@ -1,5 +1,5 @@
-# Use a full Python 3.9 image (not slim)
-FROM python:3.9
+# Use Python 3.8 base image
+FROM python:3.8
 
 # Avoid prompts during apt install
 ENV DEBIAN_FRONTEND=noninteractive
@@ -20,14 +20,26 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy the requirements.txt first for better Docker layer caching
+# Upgrade pip early
+RUN pip install --upgrade pip
+
+# Install fire explicitly (if needed early for your code)
+RUN pip install fire==0.7.0
+
+# Copy the requirements file before installing (for caching benefit)
 COPY requirements.txt .
 
-# Upgrade pip and install Python dependencies
-RUN pip install --upgrade pip
+# Install face_recognition_models manually to bypass broken dependency
+RUN pip install face_recognition_models==0.1.3
+
+# Install face-recognition, ignoring the broken model version requirement
+RUN pip install face-recognition==1.2.3
+
+# Install remaining dependencies from requirements.txt
+# Make sure face-recognition and models are removed from this file!
 RUN pip install -r requirements.txt
 
-# Copy the rest of your app code
+# Copy the rest of your codebase into the container
 COPY . .
 
 # Expose the FastAPI port
