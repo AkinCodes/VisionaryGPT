@@ -17,7 +17,7 @@ cycler==0.12.1
 dataclasses==0.6
 datasets==2.11.0
 deepface==0.0.93
-diffusers==0.20.2
+diffusers==0.21.3
 dill==0.3.5.1
 distro==1.9.0
 dlib==19.24.6
@@ -122,7 +122,7 @@ termcolor==1.1.0
 threadpoolctl==3.1.0
 tifffile==2021.7.2
 tokenizers==0.10.3
-torch==1.12.1
+torch==1.13.1
 torchvision==0.13.1
 tqdm==4.62.3
 transformers==4.17.0
