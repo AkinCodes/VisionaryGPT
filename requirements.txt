@@ -20,7 +20,7 @@ deepface==0.0.93
 diffusers==0.21.3
 dill==0.3.5.1
 distro==1.9.0
-dlib==19.24.6 --only-binary :all:
+dlib==19.23.0
 easyocr==1.7.2
 ecdsa==0.19.1
 exceptiongroup==1.2.2
