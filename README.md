@@ -1,5 +1,8 @@
 # VisionaryGPT: AI-Powered Movie Poster Generation & Classification
 
+<img width="1073" alt="Screenshot 2025-04-20 at 15 41 48" src="https://github.com/user-attachments/assets/0e73313d-d1e4-4204-a7e1-711d9591f2a7" />
+<hr />
+
 Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, classify, and extract metadata from movie posters. By leveraging the most cutting-edge technologies in computer vision, deep learning, and natural language processing (NLP), VisionaryGPT transforms creative possibilities for media and entertainment into reality. This project demonstrates the seamless integration of powerful AI models with FastAPI for high-performance API deployment.
 
 
