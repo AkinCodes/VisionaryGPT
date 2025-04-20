@@ -143,7 +143,7 @@ Feel free to fork this project and submit pull requests for improvements! Contri
 
 ## Author
 **Akin Olusanya**  
-iOS Engineer | ML Enthusiast | Full-Stack Creator  
+iOS Engineer | ML Engineer | Full-Stack Creator  
 workwithakin@gmail.com  
 [LinkedIn](https://www.linkedin.com/in/akindeveloper)  
 [GitHub](https://github.com/AkinCodes)
