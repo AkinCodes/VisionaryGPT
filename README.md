@@ -44,7 +44,7 @@ Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, class
 
 ## Screenshots
 
-<img width="818" alt="Screenshot 2025-04-18 at 16 50 10" src="https://github.com/user-attachments/assets/4bf10aa9-8871-4f1f-a87c-3ca4eb3cf38c" />
+<img width="1113" alt="Screenshot 2025-04-18 at 16 50 10" src="https://github.com/user-attachments/assets/4bf10aa9-8871-4f1f-a87c-3ca4eb3cf38c" />
 
 <hr />
 
