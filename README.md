@@ -43,6 +43,15 @@ Welcome to  **VisionaryGPT**, an AI-powered platform designed to generate, class
 
 <img width="818" alt="Screenshot 2025-04-18 at 16 50 10" src="https://github.com/user-attachments/assets/4bf10aa9-8871-4f1f-a87c-3ca4eb3cf38c" />
 
+<hr />
+
+<img width="1113" alt="Screenshot 2025-04-20 at 15 33 45" src="https://github.com/user-attachments/assets/c1f0b43d-7dcb-4f29-aea8-f41f80a88293" />
+
+<hr />
+
+<img width="1077" alt="Screenshot 2025-04-20 at 06 10 10" src="https://github.com/user-attachments/assets/27b6c172-2e7a-4ab6-b4c2-dbcda4d943e0" />
+
+<hr />
 
 
 
