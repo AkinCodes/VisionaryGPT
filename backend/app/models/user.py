@@ -6,5 +6,5 @@ class User(BaseModel):
     id: int
     username: str
     email: str
-    full_name: Union[str, None] = None  # Use Union instead of | for Python < 3.10
+    full_name: Union[str, None] = None 
     disabled: bool = False

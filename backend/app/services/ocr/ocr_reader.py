@@ -31,7 +31,7 @@ class OCRReader:
             results = reader.readtext(image)
 
             # Extract each text line from the results
-            text_lines = [item[1] for item in results]  # Extracting only the text part from the OCR results
+            text_lines = [item[1] for item in results]  
 
             # Return the response model with the list of detected text lines
             return OCRResponse(text=text_lines)  # Return text as a list of strings

@@ -16,7 +16,7 @@ class PosterRemixEngine:
         c = self.embedder.get_image_embedding(subtract_path)
 
         fused = a + b - c
-        fused = fused / fused.norm(p=2, dim=-1, keepdim=True)  # L2 normalize
+        fused = fused / fused.norm(p=2, dim=-1, keepdim=True)  
 
         # Turn embedding into prompt (optional — or use placeholder)
         prompt = "A new movie that combines the themes of these two posters and removes the third."

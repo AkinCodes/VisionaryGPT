@@ -9,17 +9,15 @@ class GenreClassifier(nn.Module):
     def __init__(self, num_classes=5, checkpoint=None):
         super(GenreClassifier, self).__init__()
 
-        # Load the pretrained Vision Transformer (ViT) model
         self.model = ViTForImageClassification.from_pretrained(
             "google/vit-base-patch16-224-in21k", 
             num_labels=num_classes
         )
 
-        # If a checkpoint is provided, load the weights
         if checkpoint:
             self.model.load_state_dict(torch.load(checkpoint, map_location="cpu"))
 
-        self.model.eval()  # Set the model to evaluation mode
+        self.model.eval()  
 
         self.transform = transforms.Compose([
             transforms.Resize((224, 224)),
@@ -32,7 +30,6 @@ class GenreClassifier(nn.Module):
         return self.model(x)
 
     def predict(self, image_path: str):
-        """Make prediction on the input image"""
         img = Image.open(image_path).convert("RGB")
         tensor = self.transform(img).unsqueeze(0)
         labels = ["Action", "Comedy", "Drama", "Horror", "Romance"]
