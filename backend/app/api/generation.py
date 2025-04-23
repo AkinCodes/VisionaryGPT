@@ -2,7 +2,7 @@ import os
 import tempfile
 import uuid
 from fastapi import APIRouter, File, Form, UploadFile, HTTPException
-from backend.app.models.generation import GenerationResponse
+from backend.app.models.generation.generation import GenerationResponse
 from backend.app.services.generation.stable_diffusion import StableDiffusionGenerator
 
 router = APIRouter()

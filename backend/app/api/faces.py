@@ -5,7 +5,7 @@ from backend.app.models.embeddings import EmbedRequest
 from backend.app.services.faces.face_analyzer import FaceAnalyzer
 
 router = APIRouter()
-analyzer = FaceAnalyzer()  # Provide path to known faces directory
+analyzer = FaceAnalyzer() 
 
 @router.post("/", summary="Detect and recognize faces in an image")
 def detect_faces(request: EmbedRequest):

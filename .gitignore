@@ -37,3 +37,6 @@ render.yaml
 # Ignore uploaded files (e.g., for temp uploads or generated files)
 uploads/
 static/generated/
+
+# Ignore TensorBoard logs
+app/logs/tensorboard/
