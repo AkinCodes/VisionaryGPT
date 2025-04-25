@@ -39,4 +39,12 @@ uploads/
 static/generated/
 
 # Ignore TensorBoard logs
+backend/app/logs/tensorboard/
 app/logs/tensorboard/
+
+# Ignore log files
+backend/app/logs/
+app/logs/
+
+
+

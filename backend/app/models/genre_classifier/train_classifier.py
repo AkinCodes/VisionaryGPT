@@ -7,7 +7,6 @@ from backend.scripts.prepare_data import prepare_data
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-# Evaluation imports
 from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
@@ -24,7 +23,7 @@ def train_model(model, train_loader, optimizer, criterion, device, writer, epoch
             optimizer.zero_grad()
 
             # Forward pass
-            outputs = model(imgs).logits  # For ViT, the output logits are in the 'logits' attribute
+            outputs = model(imgs).logits  
             loss = criterion(outputs, labels)
             loss.backward()
             optimizer.step()
@@ -80,19 +79,15 @@ if __name__ == '__main__':
     # Initialize the ViT model with 5 output classes (Action, Comedy, Drama, Horror, Romance)
     model = ViTForImageClassification.from_pretrained("google/vit-base-patch16-224-in21k", num_labels=5)
 
-    # Move model to device (GPU if available)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
-    # Define loss and optimizer
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
     writer = SummaryWriter(log_dir='app/logs/tensorboard')
 
-    # Prepare data (train_loader, test_loader)
     train_loader, test_loader = prepare_data()
 
-    # Train the model
     trained_model = train_model(model, train_loader, optimizer, criterion, device, writer, epochs=10)
 
     # Save the model weights after training
