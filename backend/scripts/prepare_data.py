@@ -7,13 +7,13 @@ def pil_collate_fn(batch):
     return list(images), torch.tensor(labels)
 
 def get_dataloader(data_dir, batch_size=32, shuffle=True):
-    dataset = datasets.ImageFolder(root=data_dir)  # yields PIL images
+    dataset = datasets.ImageFolder(root=data_dir) 
     dataloader = DataLoader(
         dataset,
         batch_size=batch_size,
         shuffle=shuffle,
         num_workers=0,
-        collate_fn=pil_collate_fn  # 👈 fixes batching PILs
+        collate_fn=pil_collate_fn 
     )
     return dataloader
 
